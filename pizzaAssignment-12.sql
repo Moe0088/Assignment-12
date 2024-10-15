@@ -147,17 +147,18 @@ JOIN `pizza` p ON op.pizza_id = p.pizza_id
 group by c.customer_id, c.customer_name;
 
 
-  select 
+-- Show the customer info by the date
+
+select 
   c.customer_name,
   c.customer_id,
- date(o.order_date) as Date_of_order_name_conclusion,
- 
- sum(p.price * op.quantity) as Total_spending
- from `customer` c
- 
- join `orders` o on  c.customer_id = o.customer_id
- join  `order_pizza` op on o.order_id = op.order_id
- join `pizza` p on op.pizza_id = p.pizza_id
- 
- group by c.customer_name, date(o.order_date);
- 
+date(o.order_date) as Date_of_order,
+  SUM(p.price * op.quantity) as Total_spending
+from `customer` c
+
+join `orders` o on c.customer_id = o.customer_id
+join `order_pizza` op on o.order_id = op.order_id
+join `pizza` p on op.pizza_id = p.pizza_id
+
+group by  c.customer_name, c.customer_id, date(o.order_date);
+
