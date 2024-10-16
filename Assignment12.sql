@@ -85,17 +85,6 @@ values ( 3 , 4 , 1);
   select * from order_pizza;
   
 
-insert into customer_order (customer_id, order_id)
-values (1 , 1);
-
-insert into customer_order (customer_id, order_id)
-values (2 , 2);
-
-insert into customer_order (customer_id, order_id)
-values (1 , 3);
-
-select * from customer_order;
-
 -- I need to show customer name with the order 
   
 select * from customer
