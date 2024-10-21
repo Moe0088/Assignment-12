@@ -24,7 +24,6 @@ CREATE TABLE `customer` (
   );
 
 
-  
   INSERT INTO customer (customer_id, customer_name, phone_number)
   values(1, 'Trevor Page', '226-555-4982');
   
